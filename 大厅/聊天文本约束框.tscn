@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyybadbfw35a1"]
+
+[ext_resource type="Script" uid="uid://m6chb1hfybxl" path="res://脚本/大厅场景脚本/聊天文本约束框.gd" id="1_shfss"]
+
+[node name="聊天文本约束框" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 100
+script = ExtResource("1_shfss")
+
+[node name="房间内聊天界面" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+
+[node name="大厅文本" type="RichTextLabel" parent="房间内聊天界面"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "大厅文本"
+scroll_following = true

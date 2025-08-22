@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdsexwygisjvi"]
+
+[ext_resource type="Script" uid="uid://cgu7trjatejcd" path="res://脚本/大厅场景脚本/聊天发送文本约束框.gd" id="1_7ugoq"]
+
+[node name="聊天发送文本约束框" type="MarginContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_7ugoq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="聊天框" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Chat" type="TextEdit" parent="VBoxContainer/聊天框"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+text = "请呃呃 我我  "
+placeholder_text = "请发送消息"
+
+[node name="发送" type="Button" parent="VBoxContainer/聊天框"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "发送
+"
+
+[node name="底部按钮" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="返回" type="Button" parent="VBoxContainer/底部按钮"]
+layout_mode = 2
+text = "退出房间并返回"
+
+[node name="连接Godot并加入玩家实例" type="Button" parent="VBoxContainer/底部按钮"]
+layout_mode = 2
+text = "连接Godot并加入玩家实例"

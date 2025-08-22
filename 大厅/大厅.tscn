@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://diaje8m55tfh5"]
+
+[ext_resource type="Script" uid="uid://j5icw10120wm" path="res://脚本/大厅场景脚本/大厅.gd" id="1_fru5o"]
+[ext_resource type="PackedScene" uid="uid://dyybadbfw35a1" path="res://大厅/聊天文本约束框.tscn" id="1_jdfhj"]
+[ext_resource type="PackedScene" uid="uid://cmx562c3neovk" path="res://大厅/大厅房间列表界面.tscn" id="1_vu1qt"]
+[ext_resource type="PackedScene" uid="uid://bdsexwygisjvi" path="res://大厅/聊天发送文本约束框.tscn" id="2_444p4"]
+[ext_resource type="PackedScene" uid="uid://bcd8m8h2fr5xo" path="res://大厅/大厅初始按钮约束框.tscn" id="3_444p4"]
+
+[node name="大厅" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fru5o")
+
+[node name="聊天发送文本约束框" parent="." instance=ExtResource("2_444p4")]
+layout_mode = 1
+
+[node name="聊天文本约束框" parent="." instance=ExtResource("1_jdfhj")]
+layout_mode = 1
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 400.0
+
+[node name="大厅初始按钮约束框" parent="." instance=ExtResource("3_444p4")]
+layout_mode = 1
+
+[node name="大厅房间列表界面" parent="." instance=ExtResource("1_vu1qt")]
+layout_mode = 1

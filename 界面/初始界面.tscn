@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://fywksqryis7h"]
+
+[ext_resource type="Script" uid="uid://dg7o25rgnp64q" path="res://脚本/初始界面脚本/初始界面.gd" id="1_6cfnm"]
+
+[node name="初始界面" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6cfnm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AppID" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AppID" type="Label" parent="VBoxContainer/AppID"]
+layout_mode = 2
+text = "APPID:"
+
+[node name="AppIDLabel2" type="Label" parent="VBoxContainer/AppID"]
+layout_mode = 2
+
+[node name="Steam登入者ID" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SteamID" type="Label" parent="VBoxContainer/Steam登入者ID"]
+layout_mode = 2
+text = "SteamID:"
+
+[node name="Steam登入者IDLabel2" type="Label" parent="VBoxContainer/Steam登入者ID"]
+layout_mode = 2
+
+[node name="Steam登入者名称" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SteamUserName" type="Label" parent="VBoxContainer/Steam登入者名称"]
+layout_mode = 2
+text = "SteamUserName:"
+
+[node name="Steam登入者名称Label2" type="Label" parent="VBoxContainer/Steam登入者名称"]
+layout_mode = 2
+
+[node name="APP所有者" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AppOwner" type="Label" parent="VBoxContainer/APP所有者"]
+layout_mode = 2
+text = "APPOwner:"
+
+[node name="App所有者Label2" type="Label" parent="VBoxContainer/APP所有者"]
+layout_mode = 2
