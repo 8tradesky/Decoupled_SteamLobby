@@ -1,14 +1,18 @@
-extends Panel
+extends UI界面基类
 
 @onready var lobby_list: VBoxContainer = $"大厅列表"
 @onready var btn_back: Button = $"MarginContainer/HBoxContainer/返回"
+func _init():
+	界面名称 = "大厅列表界面"
+	显示状态列表 = [
+			UIStateManager.UIState.LOBBY_LIST
+		]
 
-func _ready() -> void:
-	if not MainController.is_node_ready():
-		await MainController.ready
-	await get_tree().process_frame
+func _界面初始化() -> void:
 	btn_back.pressed.connect(_on_back_pressed)
 	EventBus.大厅列表_已更新.connect(_on_lobby_list_updated)
+	
+	
 
 func _on_back_pressed() -> void:
 	MainController.切换到主菜单()

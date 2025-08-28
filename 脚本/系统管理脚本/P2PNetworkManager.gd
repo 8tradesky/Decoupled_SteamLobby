@@ -76,7 +76,7 @@ func 断开所有对等体() -> void:
 			var member_steam_id = member.get("steam_id", 0)
 			if member_steam_id != 0:
 				Steam.closeP2PSessionWithUser(member_steam_id)
-	
+	steam对等体.close()
 	已连接对等体.clear()
 
 # 发送P2P数据包
