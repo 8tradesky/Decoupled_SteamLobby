@@ -29,6 +29,7 @@ func 连接事件() -> void:
 	Steam.lobby_joined.connect(_当大厅加入回调)
 	事件总线.大厅_已离开.connect(_当大厅离开回调)
 	multiplayer.connected_to_server.connect(_连接服务器回调)
+	事件总线.多人游戏_结束.connect(_当多人游戏结束回调)
 
 func _连接服务器回调():
 	print("连接到")
@@ -46,10 +47,13 @@ func _当大厅加入回调(this_lobby_id: int, permissions: int, locked: bool, 
 	if id != Steam.getSteamID():
 		房主SteamID = id
 		连接Steam套接字(房主SteamID)
+func _当多人游戏结束回调():
+	_当大厅离开回调(大厅ID)
 
 func _当大厅离开回调(lobby_id: int) -> void:
 	self.大厅ID = 0
 	断开所有对等体()
+	
 
 # 创建Steam Socket（作为房主）
 func 创建Steam套接字() -> void:

@@ -33,5 +33,7 @@ func _on_leave() -> void:
 	MainController.离开大厅()
 
 func _on_connect() -> void:
+	
+	EventBus.发射_多人游戏开始()
 	# 示例：这里可触发进入游戏或连接逻辑，按需替换
 	print("连接Godot并加入玩家实例：请在此实现你的逻辑")

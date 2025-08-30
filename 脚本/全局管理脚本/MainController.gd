@@ -1,8 +1,5 @@
 extends Node
 
-# 场景引用
-@export var game_scene: PackedScene
-
 # 组件引用
 var steam_connection: SteamConnectionManager
 var lobby_manager: LobbyManager
@@ -10,6 +7,11 @@ var p2p_manager: P2PNetworkManager
 var chat_system: ChatSystem
 var ui_state_manager: UIStateManager
 var event_bus: EventBus
+
+# 玩家组
+ 
+
+
 
 func _ready() -> void:
 	# 等待一帧确保所有节点都准备好
@@ -51,6 +53,7 @@ func _initialize_components() -> void:
 	ui_state_manager = UIStateManager.new()
 	add_child(ui_state_manager)
 	ui_state_manager.name = "UIStateManager"
+	
 
 func _connect_events() -> void:
 	# 连接Steam相关事件
@@ -77,7 +80,7 @@ func _connect_events() -> void:
 func _process(_delta: float) -> void:
 	# 处理P2P数据包，添加频率限制和错误处理
 	pass
-# 事件处理函数
+#region 事件处理函数
 
 func _on_steam_initialized() -> void:
 	print("Steam初始化成功，可以开始使用大厅功能")
@@ -120,8 +123,8 @@ func _on_ui_state_changed(state: String, visible: bool) -> void:
 
 func _on_button_state_changed(button_name: String, enabled: bool) -> void:
 	print("按钮状态变化: %s, 启用: %s" % [button_name, enabled])
-
-# 公共接口方法
+#endregion
+#region 公共接口方法
 
 # 创建大厅
 func 创建大厅() -> void:
@@ -196,3 +199,4 @@ func 在大厅中() -> bool:
 
 func P2P已连接() -> bool:
 	return p2p_manager and p2p_manager.多玩家对等体已连接()
+#endregion
