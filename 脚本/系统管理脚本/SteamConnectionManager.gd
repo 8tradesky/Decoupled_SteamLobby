@@ -2,7 +2,7 @@ class_name SteamConnectionManager
 extends Node
 
 # Steam配置
-@export var 应用ID: int = 3923510
+@export var 应用ID: int = 480
 
 # Steam状态变量
 var steam_initialized: bool = false
