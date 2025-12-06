@@ -13,7 +13,7 @@ var Steam登入者名称
 var App所有者
 
 # 重写基类属性
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "初始界面"
 	显示状态列表 = [
 		UIStateManager.UIState.INITIALIZED,  # 初始化状态时显示

@@ -4,7 +4,7 @@ extends UI界面基类
 @onready var btn_send: Button = $"VBoxContainer/聊天框/发送"
 @onready var btn_leave: Button = $"VBoxContainer/底部按钮/返回"
 @onready var btn_connect: Button = $"VBoxContainer/底部按钮/连接Godot并加入玩家实例"
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "大厅内界面"
 	显示状态列表 = [
 			UIStateManager.UIState.IN_LOBBY

@@ -1,7 +1,7 @@
 extends UI界面基类
 
 @onready var 棘环模式: CheckButton = $棘环模式
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "棘环模式开关"
 	显示状态列表 = [
 			UIStateManager.UIState.MAIN_MENU,

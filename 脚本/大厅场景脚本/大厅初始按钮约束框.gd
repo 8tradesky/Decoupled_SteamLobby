@@ -4,7 +4,7 @@ extends UI界面基类
 @onready var btn_join: Button = $"Panel/加入\\创建前按钮/加入大厅"
 @onready var btn_exit: Button = $"Panel/加入\\创建前按钮/退出"
 
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "主菜单界面"
 	显示状态列表 =[
 		UIStateManager.UIState.MAIN_MENU,

@@ -1,8 +1,2 @@
-res://Main.tscn
-res://界面/初始界面.tscn
 res://大厅/大厅房间列表界面.tscn
-res://大厅/聊天发送文本约束框.tscn
-res://大厅/大厅初始按钮约束框.tscn
-res://大厅/聊天文本约束框.tscn
-res://大厅/大厅.tscn
-res://脚本/全局管理脚本/MainController.gd
+res://脚本/大厅场景脚本/大厅房间列表界面.gd

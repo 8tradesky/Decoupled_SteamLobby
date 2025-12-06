@@ -1,7 +1,7 @@
 extends UI界面基类
 
 @onready var chat_display: RichTextLabel = $"房间内聊天界面/大厅文本"
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "聊天界面"
 	显示状态列表 =[
 			UIStateManager.UIState.IN_LOBBY,

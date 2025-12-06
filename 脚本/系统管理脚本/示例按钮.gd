@@ -1,7 +1,7 @@
 extends UI按钮基类
 
 # 示例：创建大厅按钮
-func _init():
+func 设置按钮名称以及启用和禁用状态列表():
 	按钮名称 = "create_lobby"
 	启用状态列表 = [
 		UIStateManager.UIState.MAIN_MENU,    # 在主菜单启用

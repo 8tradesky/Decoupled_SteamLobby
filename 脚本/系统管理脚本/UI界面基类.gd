@@ -1,4 +1,4 @@
-class_name UI界面基类
+@abstract class_name UI界面基类
 extends Control
 
 # UI状态管理器引用
@@ -13,6 +13,10 @@ var 显示状态列表: Array[UIStateManager.UIState] = []
 # 是否自动注册 - 子类可以设置为false来禁用自动注册
 var 自动注册: bool = true
 
+func _init() -> void:
+	设置界面名称以及显示状态列表()
+	
+
 func _ready() -> void:
 	await get_tree().process_frame
 	
@@ -26,8 +30,9 @@ func _ready() -> void:
 	# 调用子类的初始化方法
 	_界面初始化()
 
-# 注册到UI状态管理器
-func _注册到UI状态管理器() -> void:
+@abstract func 设置界面名称以及显示状态列表() -> void
+
+func _注册到UI状态管理器() -> void: # 注册到UI状态管理器
 	if UI状态管理器 and 界面名称 != "未命名界面":
 		UI状态管理器.注册界面(界面名称, self, 显示状态列表)
 		print("界面 '%s' 已自动注册到UI状态管理器" % 界面名称)
@@ -51,11 +56,10 @@ func 更新显示规则(新显示规则: Array[UIStateManager.UIState]) -> void:
 		UI状态管理器.更新界面显示规则(界面名称, 新显示规则)
 
 # 子类需要重写的方法 - 界面初始化
-func _界面初始化() -> void:
-	pass
+@abstract func _界面初始化() -> void
 
-# 当节点被移除时，自动取消注册
-func _exit_tree() -> void:
+
+func _exit_tree() -> void: # 当节点被移除时，自动取消注册
 	取消注册界面()
 
 # 获取当前UI状态

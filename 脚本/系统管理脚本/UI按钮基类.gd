@@ -1,4 +1,4 @@
-class_name UI按钮基类
+@abstract class_name UI按钮基类
 extends Button
 
 # UI状态管理器引用
@@ -15,6 +15,8 @@ var 禁用状态列表: Array[UIStateManager.UIState] = []
 
 # 是否自动注册 - 子类可以设置为false来禁用自动注册
 var 自动注册: bool = true
+func _init() -> void:
+	设置按钮名称以及启用和禁用状态列表()
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -29,8 +31,9 @@ func _ready() -> void:
 	# 调用子类的初始化方法
 	_按钮初始化()
 
-# 注册到UI状态管理器
-func _注册到UI状态管理器() -> void:
+@abstract func 设置按钮名称以及启用和禁用状态列表()
+
+func _注册到UI状态管理器() -> void:  # 注册到UI状态管理器
 	if UI状态管理器 and 按钮名称 != "未命名按钮":
 		UI状态管理器.注册按钮(按钮名称, self, 启用状态列表, 禁用状态列表)
 		print("按钮 '%s' 已自动注册到UI状态管理器" % 按钮名称)
@@ -60,11 +63,10 @@ func 更新禁用状态(新禁用状态: Array[UIStateManager.UIState]) -> void:
 		UI状态管理器.更新按钮禁用状态(按钮名称, 新禁用状态)
 
 # 子类需要重写的方法 - 按钮初始化
-func _按钮初始化() -> void:
-	pass
+@abstract func _按钮初始化() -> void
 
-# 当节点被移除时，自动取消注册
-func _exit_tree() -> void:
+
+func _exit_tree() -> void:# 当节点被移除时，自动取消注册
 	取消注册按钮()
 
 # 获取当前UI状态

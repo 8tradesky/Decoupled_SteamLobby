@@ -1,8 +1,8 @@
 extends UI界面基类
 
-@onready var lobby_list: VBoxContainer = $"大厅列表"
+@onready var lobby_list: VBoxContainer = $"滚动容器/大厅列表"
 @onready var btn_back: Button = $"MarginContainer/HBoxContainer/返回"
-func _init():
+func 设置界面名称以及显示状态列表() -> void:
 	界面名称 = "大厅列表界面"
 	显示状态列表 = [
 			UIStateManager.UIState.LOBBY_LIST
